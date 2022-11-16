@@ -4,11 +4,20 @@ body{
     padding: 0;
 }
 #etchASketch{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+#container{
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
+
 #row{
     display: flex;
     flex-grow: 1;

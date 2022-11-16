@@ -5,6 +5,13 @@ etchASketch.setAttribute('id', 'etchASketch');
 //Append the main div element to the body of the html
 document.body.appendChild(etchASketch);
 
+//Create a div element and give it an id name of container. This will be used to contain the grid and it can be positioned using flex-box
+const container = document.createElement('div');
+container.setAttribute('id', 'container');
+
+//Append the new container element to the etch-a-sketch element
+etchASketch.appendChild(container);
+
 //Create an array to contain all of the 16 div elements, and an array to contain all of the span elements
 const rows = [];
 const squares = [];
@@ -15,7 +22,7 @@ for(let i=0; i<16; i++){ //JavaScript doesn't have multi-dimentional arrays, but
 for(let i=0; i<16; i++){
     rows[i] = document.createElement('div');
     rows[i].setAttribute('id', `row`); //${i+1}
-    etchASketch.appendChild(rows[i]);
+    container.appendChild(rows[i]);
 
     //Create 16 span elements per div element and place them in the div elements using a nested for loop
     for(let j=0; j<16; j++){
