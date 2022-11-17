@@ -14,7 +14,7 @@ etchASketch.appendChild(container);
 
 //Create an array to contain all of the 16 div elements, and an array to contain all of the span elements
 const rows = [];
-const squares = [];
+let squares = [];
 for(let i=0; i<16; i++){ //JavaScript doesn't have multi-dimentional arrays, but you can store objects/arrays in an array
     squares[i]=[];
 }
@@ -34,5 +34,19 @@ for(let i=0; i<16; i++){
     }
 }
 
-//Log to the console to see the tree of elements
-//console.log(etchASketch);
+/*
+const squaresAll = document.querySelectorAll('.square');
+squaresAll.forEach((square) => {
+    square.addEventListener('mouseover', () => {
+        console.log('good');
+        square.style.color = '#000000'
+    })
+})*/
+
+squares = document.querySelectorAll('.square');
+squares.forEach((square) => {
+    square.addEventListener('mouseover', () => {
+        square.style.backgroundColor = 'black';
+        console.log(square.style.backgroundColor);
+    })
+})
