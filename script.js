@@ -53,9 +53,10 @@ generateEtchASketch(16);
 //Event listener for when the button is pressed. User will be prompted to change the pixel size to a max of 100X100
 const btn = document.querySelector('button');
 btn.addEventListener('click', () => {
-    let size = 16;
-    size = parseInt(prompt('How big do you want the pixels to be?\n The default resolution is 16X16, and the max is 100X100'));
-    if (size>100||size<0||size===""||size===null||size===undefined){
+    let size; //The board starts at a 16X16 resolution
+    size = parseInt(prompt('How big do you want the pixels to be?\n The default resolution is 16X16, and the max is 100X100', 16));
+    console.log(isNaN(size));
+    if (size===NaN||size>100||size<0){
         alert('Sorry, that is an invalid value');
     }
     else {
@@ -85,7 +86,7 @@ etchASketch.addEventListener('mouseover', (event) => {
 
             colors[i][j] = event.target.style.backgroundColor; //Save randomly assigned square colour in memory
 
-            console.log(colors[i][j]);
+            console.log(event.target.style.backgroundColor);
         }
         else{
             //Get the RGB colour from the array, divide each number by ten, then take that number and subtract it from the element's current number

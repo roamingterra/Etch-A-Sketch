@@ -3,15 +3,21 @@
     src: url(fonts/Orbitron-VariableFont_wght.ttf);
 }
 
-html{
-    background-image: url(./photos/space.png);
-    background-size:cover;
-}
+#myVideo {
+    object-fit: cover;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }  
 
 html, body{
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    min-width: 100vw;   
     font-family: 'Orbitron';
     color: white;
 
@@ -26,7 +32,7 @@ html, body{
     flex-direction: column;
     justify-content: center;
     width: max-content;
-    height: 25vh;
+    height: 15vh; /*25vh*/
 }
 
 h1{
@@ -46,14 +52,27 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 h3{
     margin: 0;
 }
 
+button{
+    margin-top: 10px;
+    padding: 4px;
+    font-family: 'Orbitron';
+    background-color: white;
+    font-weight: bolder;
+}
+
+button:hover{
+    border-color: white;
+}
+
 #etch-a-sketch{
-    margin: 0;
+    margin: auto;
     padding: 0;
     width: 400px;
     height: 400px;
@@ -71,5 +90,17 @@ h3{
 .square{
     flex-grow: 1;
     background-color: white;
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    color: white;
+    padding: 15px;
+    min-width: 100vw;
 }
 
