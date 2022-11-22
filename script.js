@@ -68,14 +68,6 @@ btn.addEventListener('click', () => {
 })
 
 //Event listener for when mouse hovers over the square, to then change the colour of the square
-//NOTE: The squares found in the playing board are dynamically created. I learned that adding an event
-//listener to elements with a referenced class does not mean that the event listener is associated with
-//the class, it is associated to the element(s). When an element is deleted, and new elements are 
-//dynamically created, the event listener is gone. To solve this, you have to take advantage of event
-//propagation. Add the event listener to a statically created parent, and commit the event to the dynamic
-//children through the use of conditional statements.
-
-
 etchASketch.addEventListener('mouseover', (event) => {
     if(event.target.matches('.square')){
         if(event.target.style.backgroundColor===""){ //Square will only be given a new colour if it's white
